@@ -44,6 +44,14 @@ compare_reps.m takes outputs from recA_reps.m (i.e. rep1.mat) to plot parameters
 
 plotColonyTraces.m reads in a czi file and allows you to select an index within the file to plot fluorescent profiles for. The user draws a line crossing the entirety of both colonies and plots the fluorescent profiles of all fluorophores (min-max normalized) across the line. 
 
+Supplemental Figures
+
+PI_lysis.m performs gating on flow cytometry data measuring cell lysis with PI staining. The input is .fcs files from a flow cytometer and the output is histograms and bar plots of the PI staining and percent dead cells.
+
+segment_membrane_recAsignal.m is a function used to calculate fluorescent profiles along a cross-section line between two colonies on either side of a membrane. A czi file is read into the function and each scene within the file is opened. The user marks a line between two colonies and additional lines mark the edge of each colony. The fluorescent signal along the line cross-sectioning the two colonies is saved for downstream analysis.
+
+plot_membrane_recAsignal.m is a wrapper script using the segment_membrane_recAsignal.m function. This script plots signal decay curves and bar plots of the average max signal intensity for each condition. This script does not take into acount colony edges and instead only looks at peak reporter signal
+
 
 
 ![image](https://github.com/Mitchell-SysBio/2024_colibactin_contact/assets/154358451/6f7e0295-89e3-4ee3-8d02-4e37100a2e09)
